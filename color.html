@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>RemoteLOCK ホテルLP — カラーパレット 6案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #1A1A1A;
+    line-height: 1.6;
+    background: #FAFAF7;
+  }
+
+  /* --- ページ全体ヘッダー --- */
+  .page-header {
+    padding: 80px 40px 40px;
+    text-align: center;
+    background: #FAFAF7;
+    border-bottom: 1px solid #eee;
+  }
+  .page-header .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .page-header h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #0F1E42;
+    margin-bottom: 12px;
+  }
+  .page-header p {
+    font-size: 14px;
+    color: #666;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* --- ナビゲーション --- */
+  .nav {
+    position: sticky;
+    top: 0;
+    background: rgba(250, 250, 247, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #eee;
+    z-index: 100;
+    padding: 16px 40px;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+  }
+  .nav a {
+    text-decoration: none;
+    color: #555;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav a:hover { border-bottom-color: currentColor; }
+  .nav a.o { color: #0F1E42; }
+  .nav a.a { color: #0D2B1F; }
+  .nav a.b { color: #12100E; }
+  .nav a.c { color: #6B5BE8; }
+  .nav a.d { color: #035B90; }
+  .nav a.e { color: #1C6FA3; }
+
+  /* --- 各スキームセクション --- */
+  .scheme {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .scheme-header { margin-bottom: 48px; }
+  .scheme-tag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    padding: 6px 14px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .scheme h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .scheme-jp {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    color: #888;
+    margin-bottom: 16px;
+  }
+  .scheme-concept {
+    font-size: 14px;
+    color: #555;
+    max-width: 720px;
+    line-height: 1.8;
+  }
+
+  /* --- カラーパネル共通 --- */
+  .primary-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .swatch {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(15, 30, 66, 0.08);
+    background: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .swatch:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(15, 30, 66, 0.14);
+  }
+  .color-block {
+    height: 240px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+  }
+  .color-block.tall { height: 280px; }
+  .color-block.small { height: 160px; }
+  .tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    padding: 6px 12px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-weight: 600;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .tag.light { background: rgba(255,255,255,0.2); color: #fff; }
+  .tag.dark { background: rgba(0,0,0,0.1); color: #1A1A1A; }
+  .hex-display {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+  .on-dark { color: #fff; }
+  .on-light { color: #1A1A1A; }
+  .info {
+    padding: 24px;
+    border-top: 1px solid #eee;
+  }
+  .info-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .info-name { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+  .info-desc { font-size: 13px; color: #555; line-height: 1.7; }
+  .info-rgb {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #999;
+    margin-top: 8px;
+  }
+  .sub-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  /* --- 配分比率バー --- */
+  .ratio-section {
+    margin-top: 60px;
+    padding: 48px;
+    border-radius: 16px;
+    color: #fff;
+  }
+  .ratio-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  .ratio-subtitle {
+    font-size: 13px;
+    opacity: 0.7;
+    margin-bottom: 28px;
+  }
+  .ratio-bar {
+    display: flex;
+    height: 56px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  .ratio-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .ratio-legend {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    font-size: 12px;
+    opacity: 0.9;
+  }
+  .ratio-legend-item { display: flex; align-items: center; gap: 10px; }
+  .ratio-dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    flex-shrink: 0; border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* --- 使用例 --- */
+  .example-section { margin-top: 60px; }
+  .section-heading {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    display: inline-block;
+    border-bottom: 2px solid;
+  }
+  .example-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .example-card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #eee;
+  }
+  .example-hero, .example-light {
+    padding: 48px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .example-hero .eye, .example-light .eye {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 2;
+  }
+  .example-hero h3, .example-light h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
+  }
+  .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 4px;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+  }
+  .example-label {
+    padding: 16px;
+    background: #fff;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+  }
+
+  /* ====== A案: Midnight Forest ====== */
+  .scheme-a .scheme-tag { background: #0D2B1F; color: #C08F4A; }
+  .scheme-a h2 { color: #0D2B1F; }
+  .scheme-a .info-role { color: #C08F4A; }
+  .scheme-a .info-name { color: #0D2B1F; }
+  .scheme-a .ratio-section {
+    background: #0D2B1F;
+  }
+  .scheme-a .ratio-title { color: #C08F4A; }
+  .scheme-a .ratio-60 { background: #F5F1E8; color: #0D2B1F; flex: 60; }
+  .scheme-a .ratio-30 { background: #0D2B1F; color: #F5F1E8; flex: 30; }
+  .scheme-a .ratio-10 { background: #C08F4A; color: #0D2B1F; flex: 10; }
+  .scheme-a .section-heading { color: #0D2B1F; border-color: #C08F4A; }
+  .scheme-a .example-hero {
+    background: linear-gradient(135deg, #0D2B1F 0%, #1A3D2D 100%);
+    color: #fff;
+  }
+  .scheme-a .example-hero .eye { color: #C08F4A; }
+  .scheme-a .example-hero .btn { background: #C08F4A; color: #0D2B1F; }
+  .scheme-a .example-light {
+    background: #F5F1E8;
+    color: #1C1C1A;
+  }
+  .scheme-a .example-light .eye { color: #C08F4A; }
+  .scheme-a .example-light h3 { color: #0D2B1F; }
+  .scheme-a .example-light .btn { background: #0D2B1F; color: #F5F1E8; }
+
+  /* ====== B案: Obsidian Luxe（黒曜石×ブロンズ・グラデ） ====== */
+  .scheme-b {
+    position: relative;
+    background: #12100E;
+    color: #F2EEE8;
+    overflow: hidden;
+  }
+  .scheme-b::before {
+    content: '';
+    position: absolute;
+    top: -15%;
+    right: -10%;
+    width: 60%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(201, 163, 130, 0.25) 0%, transparent 65%);
+    filter: blur(90px);
+    pointer-events: none;
+  }
+  .scheme-b::after {
+    content: '';
+    position: absolute;
+    bottom: -15%;
+    left: -10%;
+    width: 55%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(92, 31, 46, 0.35) 0%, transparent 65%);
+    filter: blur(110px);
+    pointer-events: none;
+  }
+  .scheme-b > * { position: relative; z-index: 1; }
+  .scheme-b .scheme-tag {
+    background: linear-gradient(135deg, #8B6A4F 0%, #C9A382 100%);
+    color: #12100E;
+  }
+  .scheme-b h2 {
+    background: linear-gradient(90deg, #E0BC9B 0%, #C9A382 50%, #8B6A4F 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .scheme-b .scheme-jp { color: rgba(242, 238, 232, 0.5); }
+  .scheme-b .scheme-concept { color: rgba(242, 238, 232, 0.85); }
+  .scheme-b .swatch {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(201, 163, 130, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+  .scheme-b .info { border-top: 1px solid rgba(201, 163, 130, 0.12); }
+  .scheme-b .info-role { color: #C9A382; }
+  .scheme-b .info-name { color: #F2EEE8; }
+  .scheme-b .info-desc { color: rgba(242, 238, 232, 0.7); }
+  .scheme-b .info-rgb { color: rgba(242, 238, 232, 0.4); }
+  .scheme-b .tag.light { color: #fff; }
+  .scheme-b .tag.dark { background: rgba(242, 238, 232, 0.2); color: #12100E; backdrop-filter: blur(8px); }
+  .scheme-b .ratio-section {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(201, 163, 130, 0.15);
+  }
+  .scheme-b .ratio-title {
+    background: linear-gradient(90deg, #E0BC9B, #8B6A4F);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .scheme-b .ratio-60 { background: #F2EEE8; color: #12100E; flex: 60; }
+  .scheme-b .ratio-30 { background: #12100E; color: #F2EEE8; flex: 30; border: 1px solid rgba(201,163,130,0.15); }
+  .scheme-b .ratio-10 {
+    background: linear-gradient(135deg, #8B6A4F 0%, #C9A382 50%, #E0BC9B 100%);
+    color: #12100E;
+    flex: 10;
+  }
+  .scheme-b .section-heading {
+    color: #F2EEE8;
+    border-image: linear-gradient(90deg, #8B6A4F, #E0BC9B) 1;
+    border-bottom: 2px solid;
+  }
+  .scheme-b .example-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(201, 163, 130, 0.12);
+    backdrop-filter: blur(14px);
+  }
+  .scheme-b .example-hero {
+    background: linear-gradient(135deg, #12100E 0%, #1F1410 55%, #2D1619 100%);
+    color: #F2EEE8;
+    position: relative;
+  }
+  .scheme-b .example-hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 60%;
+    height: 160%;
+    background: radial-gradient(circle, rgba(201, 163, 130, 0.35) 0%, transparent 55%);
+    filter: blur(40px);
+  }
+  .scheme-b .example-hero .eye {
+    background: linear-gradient(90deg, #E0BC9B, #8B6A4F);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .scheme-b .example-hero .btn {
+    background: linear-gradient(135deg, #8B6A4F 0%, #C9A382 100%);
+    color: #12100E;
+    box-shadow: 0 8px 24px rgba(139, 106, 79, 0.4);
+  }
+  .scheme-b .example-light {
+    background: #F2EEE8;
+    color: #1A1815;
+    position: relative;
+    overflow: hidden;
+  }
+  .scheme-b .example-light::before {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -15%;
+    width: 60%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(92, 31, 46, 0.18) 0%, transparent 60%);
+    filter: blur(50px);
+  }
+  .scheme-b .example-light .eye { color: #8B6A4F; }
+  .scheme-b .example-light h3 { color: #12100E; }
+  .scheme-b .example-light .btn {
+    background: #12100E;
+    color: #F2EEE8;
+  }
+  .scheme-b .example-label {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(242, 238, 232, 0.7);
+    backdrop-filter: blur(12px);
+  }
+
+  /* ====== C案: Aurora Tech（グラデーション＋グラスモーフィズム） ====== */
+  .scheme-c {
+    position: relative;
+    background: #0A0E2E;
+    color: #F7F8FD;
+    overflow: hidden;
+  }
+  .scheme-c::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 60%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(107, 91, 232, 0.5) 0%, transparent 60%);
+    filter: blur(80px);
+    pointer-events: none;
+  }
+  .scheme-c::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 70%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(77, 191, 207, 0.4) 0%, transparent 60%);
+    filter: blur(100px);
+    pointer-events: none;
+  }
+  .scheme-c > * { position: relative; z-index: 1; }
+  .scheme-c .scheme-tag {
+    background: linear-gradient(90deg, #6B5BE8, #4DBFCF);
+    color: #fff;
+  }
+  .scheme-c h2 {
+    background: linear-gradient(90deg, #E8B4FF 0%, #4DBFCF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .scheme-c .scheme-jp { color: rgba(247, 248, 253, 0.5); }
+  .scheme-c .scheme-concept { color: rgba(247, 248, 253, 0.85); }
+  .scheme-c .swatch {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  .scheme-c .info { border-top: 1px solid rgba(255, 255, 255, 0.1); }
+  .scheme-c .info-role { color: #6B5BE8; }
+  .scheme-c .info-name { color: #F7F8FD; }
+  .scheme-c .info-desc { color: rgba(247, 248, 253, 0.7); }
+  .scheme-c .info-rgb { color: rgba(247, 248, 253, 0.4); }
+  .scheme-c .tag.light { color: #fff; }
+  .scheme-c .tag.dark { background: rgba(255,255,255,0.25); color: #0A0E2E; backdrop-filter: blur(8px); }
+  .scheme-c .ratio-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .scheme-c .ratio-title {
+    background: linear-gradient(90deg, #E8B4FF, #4DBFCF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .scheme-c .ratio-60 { background: #F7F8FD; color: #0A0E2E; flex: 60; }
+  .scheme-c .ratio-30 { background: #0A0E2E; color: #F7F8FD; flex: 30; border: 1px solid rgba(255,255,255,0.1); }
+  .scheme-c .ratio-10 {
+    background: linear-gradient(135deg, #6B5BE8 0%, #4DBFCF 100%);
+    color: #fff;
+    flex: 10;
+  }
+  .scheme-c .section-heading {
+    color: #F7F8FD;
+    border-image: linear-gradient(90deg, #6B5BE8, #4DBFCF) 1;
+    border-bottom: 2px solid;
+  }
+  .scheme-c .example-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(16px);
+  }
+  .scheme-c .example-hero {
+    background: linear-gradient(135deg, #0A0E2E 0%, #1A1F5E 50%, #0A0E2E 100%);
+    color: #F7F8FD;
+    position: relative;
+  }
+  .scheme-c .example-hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    width: 80%;
+    height: 200%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(107, 91, 232, 0.35) 0%, transparent 55%);
+    filter: blur(40px);
+  }
+  .scheme-c .example-hero .eye {
+    background: linear-gradient(90deg, #E8B4FF, #4DBFCF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .scheme-c .example-hero .btn {
+    background: linear-gradient(135deg, #6B5BE8 0%, #4DBFCF 100%);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(107, 91, 232, 0.4);
+  }
+  .scheme-c .example-light {
+    background: #F7F8FD;
+    color: #161A2E;
+    position: relative;
+    overflow: hidden;
+  }
+  .scheme-c .example-light::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 60%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(232, 180, 255, 0.4) 0%, transparent 60%);
+    filter: blur(40px);
+  }
+  .scheme-c .example-light .eye { color: #6B5BE8; }
+  .scheme-c .example-light h3 { color: #161A2E; }
+  .scheme-c .example-light .btn {
+    background: #0A0E2E;
+    color: #F7F8FD;
+  }
+  .scheme-c .example-label {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(247, 248, 253, 0.7);
+    backdrop-filter: blur(12px);
+  }
+
+  /* --- フッター --- */
+  footer {
+    padding: 60px 40px;
+    text-align: center;
+    background: #0F1E42;
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+  }
+  footer .note {
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* ====== Original: Navy × Gold（現行案） ====== */
+  .scheme-o { background: #FAFAF7; }
+  .scheme-o .scheme-tag { background: #0F1E42; color: #D4AF37; }
+  .scheme-o h2 { color: #0F1E42; }
+  .scheme-o .info-role { color: #D4AF37; }
+  .scheme-o .info-name { color: #0F1E42; }
+  .scheme-o .ratio-section { background: #0F1E42; }
+  .scheme-o .ratio-title { color: #D4AF37; }
+  .scheme-o .ratio-60 { background: #FAFAF7; color: #0F1E42; flex: 60; }
+  .scheme-o .ratio-30 { background: #0F1E42; color: #FAFAF7; flex: 30; border: 1px solid rgba(212,175,55,0.2); }
+  .scheme-o .ratio-10 { background: #D4AF37; color: #0F1E42; flex: 10; }
+  .scheme-o .section-heading { color: #0F1E42; border-color: #D4AF37; }
+  .scheme-o .example-hero {
+    background: linear-gradient(135deg, #0F1E42 0%, #1a2d5c 100%);
+    color: #fff;
+  }
+  .scheme-o .example-hero .eye { color: #D4AF37; }
+  .scheme-o .example-hero .btn { background: #D4AF37; color: #0F1E42; }
+  .scheme-o .example-light { background: #FAFAF7; color: #1A1A1A; }
+  .scheme-o .example-light .eye { color: #D4AF37; }
+  .scheme-o .example-light h3 { color: #0F1E42; }
+  .scheme-o .example-light .btn { background: #0F1E42; color: #fff; }
+
+  /* ====== D案: Corporate Sky（公式サイト準拠・ライト基調） ====== */
+  .scheme-d { background: #FFFFFF; }
+  .scheme-d .scheme-tag { background: #035B90; color: #FFC600; }
+  .scheme-d h2 { color: #035B90; }
+  .scheme-d .info-role { color: #035B90; }
+  .scheme-d .info-name { color: #2D2D2D; }
+  .scheme-d .swatch {
+    background: #fff;
+    border: 1px solid #ECECEC;
+    box-shadow: 0 4px 20px rgba(3, 91, 144, 0.06);
+  }
+  .scheme-d .info { border-top: 1px solid #ECECEC; }
+  .scheme-d .ratio-section { background: #035B90; color: #fff; }
+  .scheme-d .ratio-title { color: #FFC600; }
+  .scheme-d .ratio-60 { background: #FFFFFF; color: #035B90; flex: 60; border: 1px solid #DBE2EB; }
+  .scheme-d .ratio-30 { background: #035B90; color: #fff; flex: 30; }
+  .scheme-d .ratio-10 { background: #FFC600; color: #2D2D2D; flex: 10; }
+  .scheme-d .section-heading { color: #035B90; border-color: #FFC600; }
+  .scheme-d .example-hero {
+    background: #035B90;
+    color: #fff;
+  }
+  .scheme-d .example-hero .eye { color: #FFC600; letter-spacing: 0.3em; }
+  .scheme-d .example-hero .btn { background: #FFC600; color: #2D2D2D; }
+  .scheme-d .example-light { background: #F4F4F4; color: #2D2D2D; }
+  .scheme-d .example-light .eye { color: #035B90; }
+  .scheme-d .example-light h3 { color: #035B90; }
+  .scheme-d .example-light .btn { background: #035B90; color: #fff; }
+
+  /* ====== E案: Hospitality Mist（ライト基調＋淡青グラデ＋ゴールド） ====== */
+  .scheme-e {
+    position: relative;
+    background: linear-gradient(180deg, #FAFAFA 0%, #E8F1FA 50%, #FAFAFA 100%);
+    overflow: hidden;
+  }
+  .scheme-e::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -15%;
+    width: 55%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(199, 220, 240, 0.8) 0%, transparent 65%);
+    filter: blur(80px);
+    pointer-events: none;
+  }
+  .scheme-e::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 50%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(232, 184, 92, 0.25) 0%, transparent 65%);
+    filter: blur(90px);
+    pointer-events: none;
+  }
+  .scheme-e > * { position: relative; z-index: 1; }
+  .scheme-e .scheme-tag {
+    background: linear-gradient(135deg, #1C6FA3 0%, #4A9BC9 100%);
+    color: #FFFFFF;
+  }
+  .scheme-e h2 {
+    background: linear-gradient(90deg, #0C3E5F 0%, #1C6FA3 50%, #E8B85C 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .scheme-e .scheme-jp { color: rgba(31, 42, 58, 0.5); }
+  .scheme-e .scheme-concept { color: rgba(31, 42, 58, 0.85); }
+  .scheme-e .swatch {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(28, 111, 163, 0.1);
+    box-shadow: 0 8px 32px rgba(28, 111, 163, 0.08);
+  }
+  .scheme-e .info { border-top: 1px solid rgba(28, 111, 163, 0.08); }
+  .scheme-e .info-role { color: #E8B85C; }
+  .scheme-e .info-name { color: #1F2A3A; }
+  .scheme-e .info-desc { color: rgba(31, 42, 58, 0.7); }
+  .scheme-e .info-rgb { color: rgba(31, 42, 58, 0.4); }
+  .scheme-e .tag.light { color: #fff; }
+  .scheme-e .tag.dark { background: rgba(28, 111, 163, 0.12); color: #1F2A3A; backdrop-filter: blur(8px); }
+  .scheme-e .ratio-section {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(28, 111, 163, 0.1);
+    color: #1F2A3A;
+  }
+  .scheme-e .ratio-title {
+    background: linear-gradient(90deg, #1C6FA3, #E8B85C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .scheme-e .ratio-subtitle { color: rgba(31, 42, 58, 0.6); }
+  .scheme-e .ratio-60 {
+    background: linear-gradient(135deg, #FAFAFA 0%, #E8F1FA 100%);
+    color: #1F2A3A;
+    flex: 60;
+  }
+  .scheme-e .ratio-30 { background: #1C6FA3; color: #fff; flex: 30; }
+  .scheme-e .ratio-10 {
+    background: linear-gradient(135deg, #E8B85C 0%, #F5D395 100%);
+    color: #1F2A3A;
+    flex: 10;
+  }
+  .scheme-e .ratio-legend { color: rgba(31, 42, 58, 0.85); }
+  .scheme-e .ratio-dot { border: 1px solid rgba(28, 111, 163, 0.2); }
+  .scheme-e .section-heading {
+    color: #1C6FA3;
+    border-image: linear-gradient(90deg, #1C6FA3, #E8B85C) 1;
+    border-bottom: 2px solid;
+  }
+  .scheme-e .example-card {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(28, 111, 163, 0.1);
+    backdrop-filter: blur(14px);
+  }
+  .scheme-e .example-hero {
+    background: linear-gradient(135deg, #1C6FA3 0%, #4A9BC9 100%);
+    color: #fff;
+    position: relative;
+  }
+  .scheme-e .example-hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -15%;
+    width: 60%;
+    height: 180%;
+    background: radial-gradient(circle, rgba(245, 211, 149, 0.35) 0%, transparent 55%);
+    filter: blur(40px);
+  }
+  .scheme-e .example-hero .eye {
+    color: #F5D395;
+  }
+  .scheme-e .example-hero .btn {
+    background: linear-gradient(135deg, #E8B85C 0%, #F5D395 100%);
+    color: #1F2A3A;
+    box-shadow: 0 8px 24px rgba(232, 184, 92, 0.4);
+  }
+  .scheme-e .example-light {
+    background: linear-gradient(135deg, #FAFAFA 0%, #E8F1FA 60%, #F7F4EE 100%);
+    color: #1F2A3A;
+    position: relative;
+    overflow: hidden;
+  }
+  .scheme-e .example-light::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -15%;
+    width: 60%;
+    height: 160%;
+    background: radial-gradient(circle, rgba(199, 220, 240, 0.6) 0%, transparent 55%);
+    filter: blur(40px);
+  }
+  .scheme-e .example-light .eye { color: #E8B85C; }
+  .scheme-e .example-light h3 { color: #1C6FA3; }
+  .scheme-e .example-light .btn {
+    background: #1C6FA3;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(28, 111, 163, 0.25);
+  }
+  .scheme-e .example-label {
+    background: rgba(255, 255, 255, 0.8);
+    color: rgba(31, 42, 58, 0.7);
+    backdrop-filter: blur(12px);
+  }
+
+  @media (max-width: 900px) {
+    .primary-row { grid-template-columns: 1fr; }
+    .sub-row { grid-template-columns: repeat(2, 1fr); }
+    .example-grid { grid-template-columns: 1fr; }
+    .page-header h1, .scheme h2 { font-size: 26px; }
+    .nav { gap: 16px; font-size: 11px; padding: 12px 16px; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="eyebrow">COLOR PALETTE — 6 SCHEMES</div>
+  <h1>カラーパレット 6案</h1>
+  <p>ダーク基調4案（Original ＋ A・B・C）とライト基調2案（D・E）を1ページで比較。<br>LP制作会社との方向性すり合わせ用資料としてご活用ください。</p>
+</div>
+
+<nav class="nav">
+  <a href="#scheme-o" class="o">Original  Navy &amp; Gold</a>
+  <a href="#scheme-a" class="a">A  Midnight Forest</a>
+  <a href="#scheme-b" class="b">B  Obsidian Luxe</a>
+  <a href="#scheme-c" class="c">C  Aurora Tech</a>
+  <a href="#scheme-d" class="d">D  Corporate Sky</a>
+  <a href="#scheme-e" class="e">E  Hospitality Mist</a>
+</nav>
+
+<!-- ======================================================== -->
+<!-- Original: Navy × Gold（現行案） -->
+<!-- ======================================================== -->
+<section class="scheme scheme-o" id="scheme-o">
+  <div class="scheme-header">
+    <span class="scheme-tag">Original ✦ CURRENT</span>
+    <h2>Navy &amp; Gold</h2>
+    <div class="scheme-jp">ネイビー＆ゴールド（現行案）</div>
+    <p class="scheme-concept">
+      「高級感×テクノロジー」の軸を支える基軸案。<strong>ディープネイビー</strong>と<strong>シャンパンゴールド</strong>の組み合わせで、ラグジュアリーホテルのロビーから中規模ビジネスホテルまで幅広く対応する普遍的な配色。A・B・C・D・E案との比較基準としてここに再掲します。
+    </p>
+  </div>
+
+  <div class="primary-row">
+    <div class="swatch">
+      <div class="color-block tall" style="background: #0F1E42;">
+        <span class="tag light">PRIMARY</span>
+        <span class="hex-display on-dark">#0F1E42</span>
+      </div>
+      <div class="info">
+        <div class="info-role">プライマリ・ブランドカラー</div>
+        <div class="info-name">ディープネイビー</div>
+        <div class="info-desc">信頼・格式・夜のホテルロビーを想起させる基軸色。ヘッダー、フッター、ヒーロー背景、見出しテキストに使用。</div>
+        <div class="info-rgb">RGB: 15, 30, 66</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block tall" style="background: #D4AF37;">
+        <span class="tag dark">ACCENT</span>
+        <span class="hex-display on-light">#D4AF37</span>
+      </div>
+      <div class="info">
+        <div class="info-role">アクセントカラー</div>
+        <div class="info-name">シャンパンゴールド</div>
+        <div class="info-desc">ラグジュアリー感と「特別な体験」の象徴。CTAボタン、下線、区切り線、数字強調、アイコンのハイライトに限定使用。</div>
+        <div class="info-rgb">RGB: 212, 175, 55</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-row">
+    <div class="swatch">
+      <div class="color-block small" style="background: #FAFAF7; border: 1px solid #eee;">
+        <span class="tag dark">BASE</span>
+        <span class="hex-display on-light">#FAFAF7</span>
+      </div>
+      <div class="info">
+        <div class="info-role">ベース背景</div>
+        <div class="info-name">オフホワイト</div>
+        <div class="info-desc">セクション背景。純白ではなく、温かみのある上品な地色。</div>
+        <div class="info-rgb">RGB: 250, 250, 247</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #1A1A1A;">
+        <span class="tag light">TEXT</span>
+        <span class="hex-display on-dark">#1A1A1A</span>
+      </div>
+      <div class="info">
+        <div class="info-role">本文テキスト</div>
+        <div class="info-name">チャコール</div>
+        <div class="info-desc">本文に使用。純黒を避けることで柔らかさと可読性を両立。</div>
+        <div class="info-rgb">RGB: 26, 26, 26</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #E4A858;">
+        <span class="tag dark">SUB-ACCENT</span>
+        <span class="hex-display on-light">#E4A858</span>
+      </div>
+      <div class="info">
+        <div class="info-role">セカンダリアクセント</div>
+        <div class="info-name">アンバーゴールド</div>
+        <div class="info-desc">グラフやデータ可視化、ホバー時の補助アクセントに。</div>
+        <div class="info-rgb">RGB: 228, 168, 88</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #CFD6E3;">
+        <span class="tag dark">SUB</span>
+        <span class="hex-display on-light">#CFD6E3</span>
+      </div>
+      <div class="info">
+        <div class="info-role">サブ・罫線</div>
+        <div class="info-name">クールグレー</div>
+        <div class="info-desc">罫線、区切り、キャプション、非強調要素。</div>
+        <div class="info-rgb">RGB: 207, 214, 227</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ratio-section">
+    <div class="ratio-title">60 : 30 : 10 の配分</div>
+    <div class="ratio-subtitle">オフホワイト基調、ネイビーで引き締め、ゴールドは10%以下で「特別感」を加える。</div>
+    <div class="ratio-bar">
+      <div class="ratio-segment ratio-60">60% &nbsp;BASE</div>
+      <div class="ratio-segment ratio-30">30% &nbsp;NAVY</div>
+      <div class="ratio-segment ratio-10">10% &nbsp;GOLD</div>
+    </div>
+    <div class="ratio-legend">
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #FAFAF7;"></span>60% — オフホワイト背景＋本文エリア</div>
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #0F1E42;"></span>30% — ネイビー（ヒーロー・見出し・CTA背景）</div>
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #D4AF37;"></span>10% — ゴールド（CTAボタン・強調要素のみ）</div>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3 class="section-heading">使用イメージ</h3>
+    <div class="example-grid">
+      <div class="example-card">
+        <div class="example-hero">
+          <div class="eye">SMART HOTEL OPERATION</div>
+          <h3>おもてなしに、<br>時間を返す。</h3>
+          <a href="#" class="btn">資料をダウンロード</a>
+        </div>
+        <div class="example-label">ヒーロー（ネイビー＋ゴールド）</div>
+      </div>
+      <div class="example-card">
+        <div class="example-light">
+          <div class="eye">INTEGRATION ECOSYSTEM</div>
+          <h3>60以上のサービスと、<br>ひとつの運営を。</h3>
+          <a href="#" class="btn">詳しく見る</a>
+        </div>
+        <div class="example-label">コンテンツ（オフホワイト地）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================== -->
+<!-- A案: Midnight Forest -->
+<!-- ======================================================== -->
+<section class="scheme scheme-a" id="scheme-a">
+  <div class="scheme-header">
+    <span class="scheme-tag">Scheme A</span>
+    <h2>Midnight Forest</h2>
+    <div class="scheme-jp">ミッドナイト・フォレスト</div>
+    <p class="scheme-concept">
+      森の奥深くにある隠れ家的ブティックホテル。深い森林の緑とブラッシュドブラス（磨かれた真鍮）で、ネイビー×ゴールドとは一線を画す差別化軸。競合他社との視覚的衝突を避けつつ、落ち着いた知的な高級感を演出。<strong>Aman・Soho House・図書館的ラウンジ</strong>を連想させる。
+    </p>
+  </div>
+
+  <div class="primary-row">
+    <div class="swatch">
+      <div class="color-block tall" style="background: #0D2B1F;">
+        <span class="tag light">PRIMARY</span>
+        <span class="hex-display on-dark">#0D2B1F</span>
+      </div>
+      <div class="info">
+        <div class="info-role">プライマリ</div>
+        <div class="info-name">ディープ・フォレストグリーン</div>
+        <div class="info-desc">深く落ち着いた森の夜の色。ヘッダー、フッター、ヒーロー背景、見出しに使用。ネイビーより柔らかく、温度感がある。</div>
+        <div class="info-rgb">RGB: 13, 43, 31</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block tall" style="background: #C08F4A;">
+        <span class="tag dark">ACCENT</span>
+        <span class="hex-display on-light">#C08F4A</span>
+      </div>
+      <div class="info">
+        <div class="info-role">アクセント</div>
+        <div class="info-name">ブラッシュドブラス</div>
+        <div class="info-desc">磨かれた真鍮の金色。ピカピカしすぎず、落ち着いた重厚感。CTA、下線、アイコン、数字強調に限定使用。</div>
+        <div class="info-rgb">RGB: 192, 143, 74</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-row">
+    <div class="swatch">
+      <div class="color-block small" style="background: #F5F1E8; border: 1px solid #eee;">
+        <span class="tag dark">BASE</span>
+        <span class="hex-display on-light">#F5F1E8</span>
+      </div>
+      <div class="info">
+        <div class="info-role">ベース背景</div>
+        <div class="info-name">ウォームアイボリー</div>
+        <div class="info-desc">温かみのある生成り。セクション背景。</div>
+        <div class="info-rgb">RGB: 245, 241, 232</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #1C1C1A;">
+        <span class="tag light">TEXT</span>
+        <span class="hex-display on-dark">#1C1C1A</span>
+      </div>
+      <div class="info">
+        <div class="info-role">本文テキスト</div>
+        <div class="info-name">ソフトブラック</div>
+        <div class="info-desc">純黒を避けた温度のある黒。</div>
+        <div class="info-rgb">RGB: 28, 28, 26</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #A76E3F;">
+        <span class="tag light">SUB-ACCENT</span>
+        <span class="hex-display on-dark">#A76E3F</span>
+      </div>
+      <div class="info">
+        <div class="info-role">セカンダリアクセント</div>
+        <div class="info-name">オーチャーブラウン</div>
+        <div class="info-desc">ブラスの一段深い色。ホバー時・グラフ補助。</div>
+        <div class="info-rgb">RGB: 167, 110, 63</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #CFC9B8;">
+        <span class="tag dark">SUB</span>
+        <span class="hex-display on-light">#CFC9B8</span>
+      </div>
+      <div class="info">
+        <div class="info-role">サブ・罫線</div>
+        <div class="info-name">ウォームグレー</div>
+        <div class="info-desc">罫線、区切り、キャプション。</div>
+        <div class="info-rgb">RGB: 207, 201, 184</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ratio-section">
+    <div class="ratio-title">60 : 30 : 10 の配分</div>
+    <div class="ratio-subtitle">アイボリー背景を多めに、ブラスは10%以下で引き締める。</div>
+    <div class="ratio-bar">
+      <div class="ratio-segment ratio-60">60% &nbsp;IVORY</div>
+      <div class="ratio-segment ratio-30">30% &nbsp;FOREST</div>
+      <div class="ratio-segment ratio-10">10% &nbsp;BRASS</div>
+    </div>
+    <div class="ratio-legend">
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #F5F1E8;"></span>60% — アイボリー背景＋本文</div>
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #0D2B1F;"></span>30% — フォレストグリーン</div>
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #C08F4A;"></span>10% — ブラスアクセント</div>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3 class="section-heading">使用イメージ</h3>
+    <div class="example-grid">
+      <div class="example-card">
+        <div class="example-hero">
+          <div class="eye">SMART HOTEL OPERATION</div>
+          <h3>おもてなしに、<br>時間を返す。</h3>
+          <a href="#" class="btn">資料をダウンロード</a>
+        </div>
+        <div class="example-label">ヒーロー（フォレスト＋ブラス）</div>
+      </div>
+      <div class="example-card">
+        <div class="example-light">
+          <div class="eye">INTEGRATION ECOSYSTEM</div>
+          <h3>60以上のサービスと、<br>ひとつの運営を。</h3>
+          <a href="#" class="btn">詳しく見る</a>
+        </div>
+        <div class="example-label">コンテンツ（アイボリー地）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================== -->
+<!-- B案: Obsidian Luxe（黒曜石×ブロンズ・グラデ） -->
+<!-- ======================================================== -->
+<section class="scheme scheme-b" id="scheme-b">
+  <div class="scheme-header">
+    <span class="scheme-tag">Scheme B ✦ GRADIENT</span>
+    <h2>Obsidian Luxe</h2>
+    <div class="scheme-jp">オブシディアン・ラックス</div>
+    <p class="scheme-concept">
+      深夜のホテルバー、重厚な革張りソファ、磨き上げられた真鍮の照明。<strong>黒曜石のような漆黒</strong>を基軸に、<strong>ウォームブロンズのグラデーション</strong>と差し色のディープバーガンディで、大人の上質感と艶を表現。ネイビー×ゴールド路線より肉体的で触覚的、C案のテック感とは対照的に<strong>アナログな素材感とクラフトマンシップ</strong>を想起させる。ラグジュアリーホテル、シティリゾート、ブティック系の高単価施設に最適。<strong>Ritz-Carlton・EDITION Hotel・Park Hyatt・Aman Tokyo</strong>的な夜の静謐。
+    </p>
+  </div>
+
+  <div class="primary-row">
+    <div class="swatch">
+      <div class="color-block tall" style="background: linear-gradient(135deg, #12100E 0%, #1F1410 55%, #2D1619 100%);">
+        <span class="tag light">PRIMARY</span>
+        <span class="hex-display on-dark">#12100E</span>
+      </div>
+      <div class="info">
+        <div class="info-role">プライマリ</div>
+        <div class="info-name">オブシディアンブラック</div>
+        <div class="info-desc">わずかに茶を含む漆黒。純黒より温度があり、革・木・漆の素材感を想起させる。ヘッダー・フッター・ヒーロー背景に使用。</div>
+        <div class="info-rgb">RGB: 18, 16, 14</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block tall" style="background: linear-gradient(135deg, #8B6A4F 0%, #C9A382 50%, #E0BC9B 100%);">
+        <span class="tag light">GRADIENT</span>
+        <span class="hex-display on-dark">#8B6A4F → #E0BC9B</span>
+      </div>
+      <div class="info">
+        <div class="info-role">アクセント（グラデーション）</div>
+        <div class="info-name">ウォームブロンズ・グラデ</div>
+        <div class="info-desc">磨き上げられた真鍮・銅の艶。135°グラデでメタリック質感を表現。CTA、下線、強調テキスト、アイコンに限定使用。</div>
+        <div class="info-rgb">linear-gradient(135deg, #8B6A4F → #C9A382 → #E0BC9B)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-row">
+    <div class="swatch">
+      <div class="color-block small" style="background: #F2EEE8;">
+        <span class="tag dark">BASE</span>
+        <span class="hex-display on-light">#F2EEE8</span>
+      </div>
+      <div class="info">
+        <div class="info-role">ベース背景（ライト）</div>
+        <div class="info-name">ウォームアイボリー</div>
+        <div class="info-desc">黒基調ページ内でライト反転する場面用。温度のあるオフホワイト。</div>
+        <div class="info-rgb">RGB: 242, 238, 232</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #5C1F2E;">
+        <span class="tag light">DEEP ACCENT</span>
+        <span class="hex-display on-dark">#5C1F2E</span>
+      </div>
+      <div class="info">
+        <div class="info-role">セカンダリアクセント</div>
+        <div class="info-name">ディープバーガンディ</div>
+        <div class="info-desc">高級ラウンジのソファを想起させるワインレッド。限定的な強調、ブラー光源の差し色に。</div>
+        <div class="info-rgb">RGB: 92, 31, 46</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #6B5D4F;">
+        <span class="tag light">SUB</span>
+        <span class="hex-display on-dark">#6B5D4F</span>
+      </div>
+      <div class="info">
+        <div class="info-role">サブテキスト・非強調</div>
+        <div class="info-name">ウォームチャコールグレー</div>
+        <div class="info-desc">キャプション、補助情報、ブロンズより一段暗い使い分け。</div>
+        <div class="info-rgb">RGB: 107, 93, 79</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #1A1815;">
+        <span class="tag light">TEXT</span>
+        <span class="hex-display on-dark">#1A1815</span>
+      </div>
+      <div class="info">
+        <div class="info-role">本文テキスト（ライト反転時）</div>
+        <div class="info-name">ソフトブラック</div>
+        <div class="info-desc">アイボリー背景上での本文。純黒を避け、温度感を維持。</div>
+        <div class="info-rgb">RGB: 26, 24, 21</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ratio-section">
+    <div class="ratio-title">60 : 30 : 10 の配分</div>
+    <div class="ratio-subtitle">ダーク基調のLPを想定。黒曜石を大面積に、アイボリー反転セクションで呼吸、ブロンズは10%以下で艶を添える。</div>
+    <div class="ratio-bar">
+      <div class="ratio-segment ratio-60">60% &nbsp;OBSIDIAN</div>
+      <div class="ratio-segment ratio-30">30% &nbsp;IVORY</div>
+      <div class="ratio-segment ratio-10">10% &nbsp;BRONZE</div>
+    </div>
+    <div class="ratio-legend">
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #12100E;"></span>60% — オブシディアン背景</div>
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #F2EEE8;"></span>30% — アイボリー反転セクション</div>
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: linear-gradient(135deg, #8B6A4F, #E0BC9B);"></span>10% — ブロンズグラデ＋バーガンディ</div>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3 class="section-heading">使用イメージ（グラデ＋ブラー光源）</h3>
+    <div class="example-grid">
+      <div class="example-card">
+        <div class="example-hero">
+          <div class="eye">SMART HOTEL OPERATION</div>
+          <h3>おもてなしに、<br>時間を返す。</h3>
+          <a href="#" class="btn">資料をダウンロード</a>
+        </div>
+        <div class="example-label">ヒーロー（黒曜石＋ブロンズ光源）</div>
+      </div>
+      <div class="example-card">
+        <div class="example-light">
+          <div class="eye">INTEGRATION ECOSYSTEM</div>
+          <h3>60以上のサービスと、<br>ひとつの運営を。</h3>
+          <a href="#" class="btn">詳しく見る</a>
+        </div>
+        <div class="example-label">コンテンツ（アイボリー反転・バーガンディ影）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================== -->
+<!-- C案: Aurora Tech（グラデーション＋グラスモーフィズム） -->
+<!-- ======================================================== -->
+<section class="scheme scheme-c" id="scheme-c">
+  <div class="scheme-header">
+    <span class="scheme-tag">Scheme C ✦ GRADIENT</span>
+    <h2>Aurora Tech</h2>
+    <div class="scheme-jp">オーロラ・テック</div>
+    <p class="scheme-concept">
+      近未来型ホテル／SaaS meets Hospitality。深いインディゴを基調に、<strong>オーロラのような紫→水色のグラデーションとぼかし（ブラー）</strong>で奥行きを作る。ガラスモーフィズム（半透明のぼかしカード）でテクノロジー感と知的な自動化のイメージを演出。伝統的なラグジュアリーよりも、革新・変革・パートナーシップを訴求したい場合に最適。<strong>Linear・Vercel・Arc Browserのような洗練されたSaaS的美学</strong>を下敷きにしている。
+    </p>
+  </div>
+
+  <div class="primary-row">
+    <div class="swatch">
+      <div class="color-block tall" style="background: linear-gradient(135deg, #0A0E2E 0%, #1A1F5E 100%);">
+        <span class="tag light">PRIMARY</span>
+        <span class="hex-display on-dark">#0A0E2E</span>
+      </div>
+      <div class="info">
+        <div class="info-role">プライマリ</div>
+        <div class="info-name">ディープ・インディゴ</div>
+        <div class="info-desc">夜空の最深部。知性と静けさを表す基軸色。グラデーションの土台としても機能。</div>
+        <div class="info-rgb">RGB: 10, 14, 46</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block tall" style="background: linear-gradient(135deg, #6B5BE8 0%, #4DBFCF 100%);">
+        <span class="tag light">GRADIENT</span>
+        <span class="hex-display on-dark">#6B5BE8 → #4DBFCF</span>
+      </div>
+      <div class="info">
+        <div class="info-role">アクセント（グラデーション）</div>
+        <div class="info-name">オーロラ・グラデーション</div>
+        <div class="info-desc">紫（#6B5BE8）から水色（#4DBFCF）への135°グラデーション。CTA、強調テキスト、アイコン、ブラー光源に使用。</div>
+        <div class="info-rgb">linear-gradient(135deg, #6B5BE8 → #4DBFCF)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-row">
+    <div class="swatch">
+      <div class="color-block small" style="background: #F7F8FD;">
+        <span class="tag dark">BASE</span>
+        <span class="hex-display on-light">#F7F8FD</span>
+      </div>
+      <div class="info">
+        <div class="info-role">ベース背景（ライト）</div>
+        <div class="info-name">クールホワイト</div>
+        <div class="info-desc">わずかに青みのあるクール白。</div>
+        <div class="info-rgb">RGB: 247, 248, 253</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #161A2E;">
+        <span class="tag light">TEXT</span>
+        <span class="hex-display on-dark">#161A2E</span>
+      </div>
+      <div class="info">
+        <div class="info-role">本文テキスト</div>
+        <div class="info-name">インクブラック</div>
+        <div class="info-desc">青みのある黒。</div>
+        <div class="info-rgb">RGB: 22, 26, 46</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #E8B4FF;">
+        <span class="tag dark">SUB-ACCENT</span>
+        <span class="hex-display on-light">#E8B4FF</span>
+      </div>
+      <div class="info">
+        <div class="info-role">セカンダリアクセント</div>
+        <div class="info-name">ソフトラベンダー</div>
+        <div class="info-desc">ブラー光源、バッジ、ハイライトに。</div>
+        <div class="info-rgb">RGB: 232, 180, 255</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #DEE4F4;">
+        <span class="tag dark">SUB</span>
+        <span class="hex-display on-light">#DEE4F4</span>
+      </div>
+      <div class="info">
+        <div class="info-role">サブ・罫線</div>
+        <div class="info-name">フロスティブルー</div>
+        <div class="info-desc">罫線、非強調、ガラス面の反射表現。</div>
+        <div class="info-rgb">RGB: 222, 228, 244</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ratio-section">
+    <div class="ratio-title">60 : 30 : 10 の配分</div>
+    <div class="ratio-subtitle">ライトベースとダークヒーローを組み合わせ、グラデーションは10%に集中。ブラー効果で奥行きを作る。</div>
+    <div class="ratio-bar">
+      <div class="ratio-segment ratio-60">60% &nbsp;COOL WHITE</div>
+      <div class="ratio-segment ratio-30">30% &nbsp;INDIGO</div>
+      <div class="ratio-segment ratio-10">10% &nbsp;AURORA</div>
+    </div>
+    <div class="ratio-legend">
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #F7F8FD;"></span>60% — クールホワイト背景</div>
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #0A0E2E;"></span>30% — ディープインディゴ</div>
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: linear-gradient(135deg, #6B5BE8, #4DBFCF);"></span>10% — オーロラグラデーション</div>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3 class="section-heading">使用イメージ（ブラー効果あり）</h3>
+    <div class="example-grid">
+      <div class="example-card">
+        <div class="example-hero">
+          <div class="eye">SMART HOTEL OPERATION</div>
+          <h3>おもてなしに、<br>時間を返す。</h3>
+          <a href="#" class="btn">資料をダウンロード</a>
+        </div>
+        <div class="example-label">ヒーロー（インディゴ＋オーロラ光源）</div>
+      </div>
+      <div class="example-card">
+        <div class="example-light">
+          <div class="eye">INTEGRATION ECOSYSTEM</div>
+          <h3>60以上のサービスと、<br>ひとつの運営を。</h3>
+          <a href="#" class="btn">詳しく見る</a>
+        </div>
+        <div class="example-label">コンテンツ（ラベンダー・ブラー）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================== -->
+<!-- D案: Corporate Sky（公式サイト準拠・ライト基調） -->
+<!-- ======================================================== -->
+<section class="scheme scheme-d" id="scheme-d">
+  <div class="scheme-header">
+    <span class="scheme-tag">Scheme D ✦ LIGHT</span>
+    <h2>Corporate Sky</h2>
+    <div class="scheme-jp">コーポレート・スカイ</div>
+    <p class="scheme-concept">
+      <strong>公式サイト（remotelock.kke.co.jp）の配色をほぼ忠実に踏襲</strong>したライト基調のクリーンなコーポレートカラー。信頼・清潔・ビジネスライクな印象を重視し、既存サイトとの視覚的統一感を最優先する保守的な選択肢。業務システム・製品紹介ページとの整合性が高く、<strong>企業ブランドの一貫性</strong>を求める場合に最適。ダーク案より親しみやすく、幅広いホテル経営者に受け入れられやすい。
+    </p>
+  </div>
+
+  <div class="primary-row">
+    <div class="swatch">
+      <div class="color-block tall" style="background: #035B90;">
+        <span class="tag light">PRIMARY</span>
+        <span class="hex-display on-dark">#035B90</span>
+      </div>
+      <div class="info">
+        <div class="info-role">プライマリ</div>
+        <div class="info-name">コーポレートブルー</div>
+        <div class="info-desc">公式サイトのメインカラー。信頼・誠実・テクノロジーの象徴。ヘッダー、CTA背景、見出し、ボーダーに使用。</div>
+        <div class="info-rgb">RGB: 3, 91, 144</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block tall" style="background: #FFC600;">
+        <span class="tag dark">ACCENT</span>
+        <span class="hex-display on-light">#FFC600</span>
+      </div>
+      <div class="info">
+        <div class="info-role">アクセント</div>
+        <div class="info-name">ビビッドイエロー</div>
+        <div class="info-desc">公式サイトの強調色。CTA、ハイライト、注目させたい数字に限定使用。ブルーとの高コントラストで視線誘導。</div>
+        <div class="info-rgb">RGB: 255, 198, 0</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-row">
+    <div class="swatch">
+      <div class="color-block small" style="background: #FFFFFF; border: 1px solid #ECECEC;">
+        <span class="tag dark">BASE</span>
+        <span class="hex-display on-light">#FFFFFF</span>
+      </div>
+      <div class="info">
+        <div class="info-role">ベース背景</div>
+        <div class="info-name">ピュアホワイト</div>
+        <div class="info-desc">メイン背景。公式サイトと同じクリーンな白。</div>
+        <div class="info-rgb">RGB: 255, 255, 255</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #F4F4F4;">
+        <span class="tag dark">SECTION BG</span>
+        <span class="hex-display on-light">#F4F4F4</span>
+      </div>
+      <div class="info">
+        <div class="info-role">セクション背景</div>
+        <div class="info-name">ライトグレー</div>
+        <div class="info-desc">セクション区切り用の薄いグレー。純白との差別化。</div>
+        <div class="info-rgb">RGB: 244, 244, 244</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #DBE2EB;">
+        <span class="tag dark">SUB</span>
+        <span class="hex-display on-light">#DBE2EB</span>
+      </div>
+      <div class="info">
+        <div class="info-role">サブ・ブルーグレー</div>
+        <div class="info-name">アイスブルー</div>
+        <div class="info-desc">データ背景、カード背景、非強調エリアに。ブルーとの自然な調和。</div>
+        <div class="info-rgb">RGB: 219, 226, 235</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #2D2D2D;">
+        <span class="tag light">TEXT</span>
+        <span class="hex-display on-dark">#2D2D2D</span>
+      </div>
+      <div class="info">
+        <div class="info-role">本文テキスト</div>
+        <div class="info-name">ダークチャコール</div>
+        <div class="info-desc">公式サイトと同じ本文色。純黒より柔らかく可読性が高い。</div>
+        <div class="info-rgb">RGB: 45, 45, 45</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ratio-section">
+    <div class="ratio-title">60 : 30 : 10 の配分</div>
+    <div class="ratio-subtitle">ホワイト基調、コーポレートブルーで引き締め、イエローは10%以下で「注目ポイント」を強調。</div>
+    <div class="ratio-bar">
+      <div class="ratio-segment ratio-60">60% &nbsp;WHITE</div>
+      <div class="ratio-segment ratio-30">30% &nbsp;BLUE</div>
+      <div class="ratio-segment ratio-10">10% &nbsp;YELLOW</div>
+    </div>
+    <div class="ratio-legend">
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #FFFFFF; border-color: #ccc;"></span>60% — ホワイト背景＋ライトグレー</div>
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #035B90;"></span>30% — コーポレートブルー（ヘッダー・CTA）</div>
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #FFC600;"></span>10% — ビビッドイエロー（強調のみ）</div>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3 class="section-heading">使用イメージ</h3>
+    <div class="example-grid">
+      <div class="example-card">
+        <div class="example-hero">
+          <div class="eye">SMART HOTEL OPERATION</div>
+          <h3>おもてなしに、<br>時間を返す。</h3>
+          <a href="#" class="btn">資料をダウンロード</a>
+        </div>
+        <div class="example-label">ヒーロー（コーポレートブルー＋イエロー）</div>
+      </div>
+      <div class="example-card">
+        <div class="example-light">
+          <div class="eye">INTEGRATION ECOSYSTEM</div>
+          <h3>60以上のサービスと、<br>ひとつの運営を。</h3>
+          <a href="#" class="btn">詳しく見る</a>
+        </div>
+        <div class="example-label">コンテンツ（ライトグレー地）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================== -->
+<!-- E案: Hospitality Mist（ライト基調＋淡青グラデ＋ソフトゴールド） -->
+<!-- ======================================================== -->
+<section class="scheme scheme-e" id="scheme-e">
+  <div class="scheme-header">
+    <span class="scheme-tag">Scheme E ✦ LIGHT + GRADIENT</span>
+    <h2>Hospitality Mist</h2>
+    <div class="scheme-jp">ホスピタリティ・ミスト</div>
+    <p class="scheme-concept">
+      公式サイトのブルーを踏襲しつつ、<strong>ホテル業界向けに柔らかく・温かく・軽やかに</strong>アレンジした上質なライト案。<strong>淡いブルーの霧（ミスト）</strong>のようなグラデーションで空気感と清潔さを演出し、彩度を抑えた<strong>ソフトゴールド</strong>で「おもてなし」の温度感を添える。公式サイトとのトーン連続性を保ちながら、宿泊業界にふさわしい品の良さを獲得する折衷案。<strong>星野リゾート・ホテルインディゴ・Hyatt Regency</strong>のような爽やかさと上質さの両立。
+    </p>
+  </div>
+
+  <div class="primary-row">
+    <div class="swatch">
+      <div class="color-block tall" style="background: linear-gradient(135deg, #1C6FA3 0%, #4A9BC9 100%);">
+        <span class="tag light">PRIMARY</span>
+        <span class="hex-display on-dark">#1C6FA3</span>
+      </div>
+      <div class="info">
+        <div class="info-role">プライマリ</div>
+        <div class="info-name">ホスピタリティブルー</div>
+        <div class="info-desc">公式ブルーを少しライト寄りにリファイン。空と海を連想させる、ホテル業界向きの爽やかで信頼感のあるブルー。</div>
+        <div class="info-rgb">RGB: 28, 111, 163</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block tall" style="background: linear-gradient(135deg, #E8B85C 0%, #F5D395 100%);">
+        <span class="tag dark">ACCENT</span>
+        <span class="hex-display on-light">#E8B85C → #F5D395</span>
+      </div>
+      <div class="info">
+        <div class="info-role">アクセント（グラデーション）</div>
+        <div class="info-name">ソフトゴールド・グラデ</div>
+        <div class="info-desc">公式イエローの彩度を抑え、温度感のある金色に。CTA・強調・アイコンに限定使用。「おもてなし」の象徴色。</div>
+        <div class="info-rgb">linear-gradient(135deg, #E8B85C → #F5D395)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-row">
+    <div class="swatch">
+      <div class="color-block small" style="background: linear-gradient(135deg, #FAFAFA 0%, #E8F1FA 100%); border: 1px solid rgba(28, 111, 163, 0.1);">
+        <span class="tag dark">BASE</span>
+        <span class="hex-display on-light">#FAFAFA → #E8F1FA</span>
+      </div>
+      <div class="info">
+        <div class="info-role">ベース（グラデーション）</div>
+        <div class="info-name">ミストホワイト</div>
+        <div class="info-desc">純白から淡いスカイブルーへ滲ませた背景。霧のような軽やかさと清潔感を演出。</div>
+        <div class="info-rgb">#FAFAFA → #E8F1FA</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #F7F4EE;">
+        <span class="tag dark">WARM BG</span>
+        <span class="hex-display on-light">#F7F4EE</span>
+      </div>
+      <div class="info">
+        <div class="info-role">セカンダリ背景</div>
+        <div class="info-name">クリームアイボリー</div>
+        <div class="info-desc">ゴールドと調和するウォームトーンのセクション背景。</div>
+        <div class="info-rgb">RGB: 247, 244, 238</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #B8C9DA;">
+        <span class="tag dark">SUB</span>
+        <span class="hex-display on-light">#B8C9DA</span>
+      </div>
+      <div class="info">
+        <div class="info-role">サブ・罫線</div>
+        <div class="info-name">ミストブルーグレー</div>
+        <div class="info-desc">罫線、区切り、キャプション、非強調要素。</div>
+        <div class="info-rgb">RGB: 184, 201, 218</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="color-block small" style="background: #1F2A3A;">
+        <span class="tag light">TEXT</span>
+        <span class="hex-display on-dark">#1F2A3A</span>
+      </div>
+      <div class="info">
+        <div class="info-role">本文テキスト</div>
+        <div class="info-name">インクネイビー</div>
+        <div class="info-desc">純黒ではなく、わずかに青みのあるダークネイビー。本文・見出しに使用。</div>
+        <div class="info-rgb">RGB: 31, 42, 58</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ratio-section">
+    <div class="ratio-title">60 : 30 : 10 の配分</div>
+    <div class="ratio-subtitle">ミストホワイトを大面積に使い、ブルーで構造を作り、ソフトゴールドで温度感を添える。</div>
+    <div class="ratio-bar">
+      <div class="ratio-segment ratio-60">60% &nbsp;MIST</div>
+      <div class="ratio-segment ratio-30">30% &nbsp;BLUE</div>
+      <div class="ratio-segment ratio-10">10% &nbsp;GOLD</div>
+    </div>
+    <div class="ratio-legend">
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: linear-gradient(135deg, #FAFAFA, #E8F1FA);"></span>60% — ミストホワイト（グラデ背景）</div>
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: #1C6FA3;"></span>30% — ホスピタリティブルー</div>
+      <div class="ratio-legend-item"><span class="ratio-dot" style="background: linear-gradient(135deg, #E8B85C, #F5D395);"></span>10% — ソフトゴールド・グラデ</div>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3 class="section-heading">使用イメージ（グラデ＋ブラー光源）</h3>
+    <div class="example-grid">
+      <div class="example-card">
+        <div class="example-hero">
+          <div class="eye">SMART HOTEL OPERATION</div>
+          <h3>おもてなしに、<br>時間を返す。</h3>
+          <a href="#" class="btn">資料をダウンロード</a>
+        </div>
+        <div class="example-label">ヒーロー（ブルー＋ソフトゴールド光源）</div>
+      </div>
+      <div class="example-card">
+        <div class="example-light">
+          <div class="eye">INTEGRATION ECOSYSTEM</div>
+          <h3>60以上のサービスと、<br>ひとつの運営を。</h3>
+          <a href="#" class="btn">詳しく見る</a>
+        </div>
+        <div class="example-label">コンテンツ（ミスト＋クリーム）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="note">
+    ※ 全6案はいずれもRemoteLOCKホテルLPの方向性候補として設計されています。<br>
+    <strong>ダーク基調（Original・A・B・C）</strong>は高級感・差別化・革新を、<br>
+    <strong>ライト基調（D・E）</strong>は公式サイトとの連続性と親しみやすさを重視しています。<br>
+    LP制作会社と方向性をご相談ください。
+  </p>
+</footer>
+
+</body>
+</html>
