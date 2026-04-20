@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="'Noto Sans JP', 'Hiragino Sans', 'Droid Sans Fallback', sans-serif">
+  <!-- V3: Experience × Tech Hybrid — 体験と技術のハイブリッド -->
+  <defs>
+    <!-- Atmospheric gradient (hotel lobby at dusk) -->
+    <linearGradient id="bgGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2A3B6A"/>
+      <stop offset="40%" stop-color="#1A2B50"/>
+      <stop offset="80%" stop-color="#0F1A35"/>
+      <stop offset="100%" stop-color="#08132A"/>
+    </linearGradient>
+    <!-- Warm light overlay (top-left) -->
+    <radialGradient id="warmLight" cx="20%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#E4A858" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#E4A858" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#E4A858" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Dark overlay for legibility (bottom-half) -->
+    <linearGradient id="darkOverlay" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#000000" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.65"/>
+    </linearGradient>
+    <!-- Architectural suggestion: vertical pillars -->
+    <pattern id="pillars" x="0" y="0" width="240" height="1080" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="1" height="1080" fill="#FFFFFF" opacity="0.04"/>
+    </pattern>
+    <filter id="softGlow3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background layers -->
+  <rect width="1920" height="1080" fill="url(#bgGradient3)"/>
+  <rect width="1920" height="1080" fill="url(#pillars)"/>
+  <rect width="1920" height="1080" fill="url(#warmLight)"/>
+  <!-- Suggestion of architecture: horizon line + reflection -->
+  <rect x="0" y="620" width="1920" height="1" fill="#D4AF37" opacity="0.15"/>
+  <rect x="0" y="621" width="1920" height="459" fill="#000000" opacity="0.15"/>
+  <rect width="1920" height="1080" fill="url(#darkOverlay)"/>
+
+  <!-- Header -->
+  <g transform="translate(120, 70)">
+    <text x="0" y="30" font-family="'Playfair Display', 'Georgia', serif" font-size="22" font-weight="700" fill="#FFFFFF" letter-spacing="3">RemoteLOCK</text>
+    <text x="0" y="52" font-size="11" fill="#D4AF37" letter-spacing="6">HOSPITALITY</text>
+  </g>
+  <g transform="translate(1310, 85)" font-size="14" fill="#E5E9F0">
+    <text x="0" y="0">特長</text>
+    <text x="70" y="0">機能</text>
+    <text x="140" y="0">導入事例</text>
+    <text x="240" y="0">連携サービス</text>
+    <text x="360" y="0">FAQ</text>
+  </g>
+  <g transform="translate(1700, 68)">
+    <rect x="0" y="0" width="160" height="38" rx="2" fill="#D4AF37"/>
+    <text x="80" y="25" text-anchor="middle" font-size="13" font-weight="600" fill="#0F1E42">資料請求</text>
+  </g>
+
+  <!-- TOP-RIGHT: UI card mockup -->
+  <g transform="translate(1340, 220)" filter="url(#softGlow3)">
+    <rect x="0" y="0" width="440" height="260" rx="6" fill="#FFFFFF" opacity="0.96"/>
+    <!-- Card header -->
+    <rect x="0" y="0" width="440" height="44" rx="6" fill="#0F1E42"/>
+    <rect x="0" y="38" width="440" height="6" fill="#0F1E42"/>
+    <circle cx="22" cy="22" r="5" fill="#D4AF37"/>
+    <text x="38" y="27" font-size="12" font-weight="600" fill="#FFFFFF" letter-spacing="2">LIVE ACCESS LOG</text>
+    <text x="380" y="27" font-size="10" fill="#8B93A8" letter-spacing="2">NOW</text>
+
+    <!-- Log rows -->
+    <g transform="translate(22, 70)" font-family="'Noto Sans JP', 'Droid Sans Fallback', sans-serif">
+      <g>
+        <circle cx="6" cy="8" r="5" fill="#4CAF8A"/>
+        <text x="22" y="12" font-size="12" font-weight="600" fill="#0F1E42">Room 1204 — チェックイン成功</text>
+        <text x="280" y="12" font-size="11" fill="#8B93A8" letter-spacing="1">2 min ago</text>
+      </g>
+      <g transform="translate(0, 34)">
+        <circle cx="6" cy="8" r="5" fill="#4CAF8A"/>
+        <text x="22" y="12" font-size="12" font-weight="600" fill="#0F1E42">Spa Entrance — アクセス許可</text>
+        <text x="280" y="12" font-size="11" fill="#8B93A8" letter-spacing="1">8 min ago</text>
+      </g>
+      <g transform="translate(0, 68)">
+        <circle cx="6" cy="8" r="5" fill="#D4AF37"/>
+        <text x="22" y="12" font-size="12" font-weight="600" fill="#0F1E42">Room 0812 — 暗証番号発行</text>
+        <text x="280" y="12" font-size="11" fill="#8B93A8" letter-spacing="1">14 min ago</text>
+      </g>
+      <g transform="translate(0, 102)">
+        <circle cx="6" cy="8" r="5" fill="#4CAF8A"/>
+        <text x="22" y="12" font-size="12" font-weight="600" fill="#0F1E42">Main Entrance — 深夜入室</text>
+        <text x="280" y="12" font-size="11" fill="#8B93A8" letter-spacing="1">21 min ago</text>
+      </g>
+      <g transform="translate(0, 136)">
+        <circle cx="6" cy="8" r="5" fill="#4CAF8A"/>
+        <text x="22" y="12" font-size="12" font-weight="600" fill="#0F1E42">Room 1507 — OTA連携発行</text>
+        <text x="280" y="12" font-size="11" fill="#8B93A8" letter-spacing="1">33 min ago</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Gold accent line (bottom-left area) -->
+  <rect x="120" y="540" width="140" height="2" fill="#D4AF37"/>
+
+  <!-- English kicker -->
+  <text x="120" y="520" font-family="'Playfair Display', 'Georgia', serif" font-size="16" fill="#D4AF37" letter-spacing="10" font-style="italic">BEYOND THE KEY</text>
+
+  <!-- Main headline -->
+  <text x="120" y="640" font-family="'Noto Serif JP', 'Yu Mincho', 'Droid Sans Fallback', serif" font-size="80" font-weight="500" fill="#FFFFFF">おもてなしは、</text>
+  <text x="120" y="740" font-family="'Noto Serif JP', 'Yu Mincho', 'Droid Sans Fallback', serif" font-size="80" font-weight="500" fill="#FFFFFF">鍵の向こうにある。</text>
+
+  <!-- Sub-copy -->
+  <text x="120" y="810" font-size="22" font-weight="300" fill="#E5E9F0">完全無人化から極上の接客まで、運営のかたちを自由にデザインする</text>
+  <text x="120" y="842" font-size="22" font-weight="300" fill="#E5E9F0">ホテル向けアクセス管理プラットフォーム。</text>
+
+  <!-- CTA -->
+  <g transform="translate(120, 890)">
+    <rect x="0" y="0" width="220" height="60" rx="2" fill="#D4AF37"/>
+    <text x="110" y="38" text-anchor="middle" font-size="15" font-weight="600" fill="#0F1E42">資料請求はこちら</text>
+  </g>
+  <g transform="translate(360, 890)">
+    <rect x="0" y="0" width="220" height="60" rx="2" fill="none" stroke="#E5E9F0" stroke-width="1"/>
+    <text x="110" y="38" text-anchor="middle" font-size="15" font-weight="400" fill="#FFFFFF">導入事例を見る</text>
+  </g>
+
+  <!-- Bottom integration logo strip -->
+  <g transform="translate(0, 1010)">
+    <text x="120" y="0" font-size="10" fill="#8B93A8" letter-spacing="6">TRUSTED INTEGRATIONS WITH 60+ HOSPITALITY SYSTEMS</text>
+    <!-- Logo placeholders (circles with abbreviations) -->
+    <g transform="translate(120, 30)">
+      <g>
+        <rect x="0" y="0" width="110" height="36" rx="4" fill="#FFFFFF" opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.2"/>
+        <text x="55" y="22" text-anchor="middle" font-size="11" fill="#CFD6E3" letter-spacing="2">PMS LOGO</text>
+      </g>
+      <g transform="translate(130, 0)">
+        <rect x="0" y="0" width="110" height="36" rx="4" fill="#FFFFFF" opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.2"/>
+        <text x="55" y="22" text-anchor="middle" font-size="11" fill="#CFD6E3" letter-spacing="2">OTA LOGO</text>
+      </g>
+      <g transform="translate(260, 0)">
+        <rect x="0" y="0" width="110" height="36" rx="4" fill="#FFFFFF" opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.2"/>
+        <text x="55" y="22" text-anchor="middle" font-size="11" fill="#CFD6E3" letter-spacing="2">CHECK-IN</text>
+      </g>
+      <g transform="translate(390, 0)">
+        <rect x="0" y="0" width="110" height="36" rx="4" fill="#FFFFFF" opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.2"/>
+        <text x="55" y="22" text-anchor="middle" font-size="11" fill="#CFD6E3" letter-spacing="2">CLEAN MGR</text>
+      </g>
+      <g transform="translate(520, 0)">
+        <rect x="0" y="0" width="110" height="36" rx="4" fill="#FFFFFF" opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.2"/>
+        <text x="55" y="22" text-anchor="middle" font-size="11" fill="#CFD6E3" letter-spacing="2">PAYMENT</text>
+      </g>
+      <g transform="translate(650, 0)">
+        <rect x="0" y="0" width="110" height="36" rx="4" fill="#FFFFFF" opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.2"/>
+        <text x="55" y="22" text-anchor="middle" font-size="11" fill="#CFD6E3" letter-spacing="2">MESSAGING</text>
+      </g>
+      <g transform="translate(780, 0)">
+        <rect x="0" y="0" width="110" height="36" rx="4" fill="#FFFFFF" opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.2"/>
+        <text x="55" y="22" text-anchor="middle" font-size="11" fill="#CFD6E3" letter-spacing="2">BI / ANALYTICS</text>
+      </g>
+      <g transform="translate(910, 0)">
+        <rect x="0" y="0" width="110" height="36" rx="4" fill="#FFFFFF" opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.2"/>
+        <text x="55" y="22" text-anchor="middle" font-size="11" fill="#CFD6E3" letter-spacing="2">IoT / DEVICES</text>
+      </g>
+      <g transform="translate(1050, 8)">
+        <text x="0" y="18" font-family="'Playfair Display', 'Georgia', serif" font-size="18" font-weight="700" fill="#D4AF37" letter-spacing="2">+52 more</text>
+      </g>
+    </g>
+  </g>
+</svg>
